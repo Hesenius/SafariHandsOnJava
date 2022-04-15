@@ -6,6 +6,8 @@ Invitation link for slack channel:
 
 https://join.slack.com/t/dancingcloud-services/shared_invite/zt-179zssy5i-BJHBIQVm7AdseJFpyGfeSQ
 
+(side note: if you don't want to use Slack, just communicate with me via email and I'll do my best to help that way. I know some folks dislike slack, or might feel it's insecure. There's no obligation here!)
+
 General guidance.
 - I have not provided "sample solutions"--the purpose of lab work is to find out what I did not explain well enough, and find out what you do, and what you do not, understand.
   If you're having trouble, let me know, I'll try to help by email, and/or we might discuss the issue in the next session (particularly if others have the same difficulty)

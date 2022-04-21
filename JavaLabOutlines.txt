@@ -223,3 +223,53 @@ Use a record rather to implement the same basic concept as the car described abo
 - can you implement the makeTrip method? If so, do so, if not, why not?
 - using this record, create two car objects with color="red", seats=5, fuel consumption=10, and fuel=10
   test to see if the cars compare as equal using == and .equals()
+
+Think about how you would design a class representing a Model T Ford motor car
+- what attributes and methods might be best represented as static, and which as instance?
+- what data fields might be best as unmodifiable, and which should be permit modification
+- implement the class with the appropriate elements
+- arrange that your class supports comparison of two instances of Model T Ford
+- arrange that your class supports storage and retrieval in a HashSet structure
+
+Consider the design of a class representing the engine of a Model T Ford.
+- notice that an engine has intimate connections to parts of the vehicle that it powers, and that those parts are likely not available for general external use, what options exist to help represent the relationship between the engine and the vehicle?
+- how would selection of an option be affected if:
+  - the engine can only be used in a Model T Ford, and no other vehicle type
+  - the engine can only be used in one particular Model T Ford, and can never exist in isolation or be moved into another Model T Ford (recognizing this is unrealistic since car parts are often taken from scrapped vehicles and used to repair others!)
+  - the engine can be used in many different kinds of vehicle, and also in boats
+- implement the engine, building a relationship that allows it to be used in any Model T Ford and potentially removed from one and installed in another, but does not allow it to be used in any other type of vehicle
+  - demonstrate the intimate relationship with Model T Ford by giving the Model T Ford a private battery voltage and ensuring that the engine can connect to this  (Note the battery feature does not have to do anything useful, it could be an int, perhaps representing the voltage of the battery. It simply exists to demonstrate the access is possible)
+
+Implement a parent-child class relationship where the concrete parent class is Animal, and there are two concrete child classes, Cat and Eagle.
+- Let the parent class represent an integer count of legs, and represent the "home" of the animal, for example, land for a cat, air for a bird, and water for a fish.
+- Give the Animal class a method "speak", which prints a message indicating the noise the animal makes. How this should behave for an arbitrary animal
+- Give the Animal class a field of String type to represent the favorite food of the animal
+- Give the Animal class a "feed" method which takes a String indicating the food that has been offered to the animal. Print a message indicating whether the animal eats the food or not.
+- Create the Cat and Eagle classes, with appropriate methods and a constructor to ensure the behaviors above are correct for the particular animal
+- Create a test program that builds a list containing a Cat, an Eagle, and an Animal. The program should then offer various food types to each animal, and ask each to speak. Ensure the behavior is as you expect and that you understand what's happening in each case.
+- What accessibilities can you use for the fields of the Animal class?
+- Modify the parent class to be abstract.
+  - which methods should be abstract?
+  - what changes with this change?
+- Add a "pet" method to the Cat class--that's "pet" in the sense of "stroke and give attention to" so perhaps have the Cat print a "purring" message.
+  - What do you have to do to be able to call the pet method on the cat after has been fed in the test program?
+  - What happens if you try to call the pet method on the Eagle?
+
+Define interfaces Feedable and Petable
+- The Feedable interface declares two methods:
+  String getFavoriteFood()
+  void feed(String food)
+- The Petable interface declares a single method:
+  void pet()
+- Note that the feed and pet methods should match those that already exist in the Animal and Cat classes
+- Arrange for the Animal class to implement this interface
+- Modify the list to contain Feedable, rather than Animal
+  - can the list still contain all the animals?
+  - can you still pet the cat? What, if anything, do you have to change?
+
+Create a list containing names
+- use lambda expressions and the List.sort method to order the names:
+  - by ascending length
+  - by descending length
+  - by alphabetical order
+- use a lambda expression and the List.replaceAll method to convert the names to upper case.

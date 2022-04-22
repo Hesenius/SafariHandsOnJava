@@ -23,11 +23,21 @@ public class Example1 {
     try {
       mightBreak();
       System.out.println("returned normally");
-    } catch (FileNotFoundException fnfe){
-      System.out.println("File problem: " + fnfe.getMessage());
-    } catch (IllegalArgumentException ie) {
-      System.out.println("that broke with " + ie.getMessage());
-    } finally {
+    }
+
+//    catch (FileNotFoundException e) {
+//      System.out.println("that broke with " + e.getMessage());
+//    } catch (IllegalArgumentException e) {
+//      System.out.println("that broke with " + e.getMessage());
+//    }
+
+    // multicatch MUST NOT include any parent/child pair
+//    catch (FileNotFoundException | IllegalArgumentException | Exception e) {
+    catch (FileNotFoundException | IllegalArgumentException e) {
+      System.out.println("that broke with " + e.getMessage());
+    }
+
+    finally {
       System.out.println("in finally");
     }
     System.out.println("returned from call");
